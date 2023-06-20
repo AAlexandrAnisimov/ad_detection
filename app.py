@@ -9,9 +9,7 @@ from tensorflow.keras.preprocessing import image
 
 # Flask utils
 from flask import Flask, redirect, url_for, request, render_template
-from werkzeug.utils import secure_filename
 from gevent.pywsgi import WSGIServer
-import pickle
 # Define a flask app
 app = Flask(__name__)
 
@@ -46,7 +44,7 @@ def upload():
         # Save the file to ./uploads
         basepath = os.path.dirname(__file__)
         file_path = os.path.join(
-            basepath, 'uploads', secure_filename(f.filename))
+            basepath, 'uploads', f.filename)
         f.save(file_path)
 
         # Make prediction
