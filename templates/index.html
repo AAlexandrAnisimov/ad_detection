@@ -1,29 +1,46 @@
-{% extends "base.html" %} {% block content %}
+    
+    
+{% extends "import.html" %} 
+{% block content %}
 
-<div class="main">
-  <div class="title">
-    <h3>Виявлення хвороби Альцгеймера</h3>
-  </div>
+<center style="padding-top: 10%;">
+<h1><span style="color: rgb(10, 10, 10);">COVID-19 Detector</span></h1>
+    <h3><p class="mb-4" style="color: rgb(10, 10, 10);">Upload Lungs X-ray image</p></h3>
+    <!--<form id="upload-file" method="post" enctype="multipart/form-data">
+         <input type="file" name="file" class="btn btn-success" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>-->
 
-  <div class="panel">
-    <input id="file-upload" class="hidden" type="file" accept="image/x-png,image/gif,image/jpeg" />
-    <label for="file-upload" id="file-drag" class="upload-box">
-      <div id="upload-caption">Drop image here or click to select</div>
-      <img id="image-preview" class="hidden" />
-    </label>
-  </div>
-  <div style="margin-bottom: 2rem;">
-    <input type="button" value="Submit" class="button" onclick="" />
-    <input type="button" value="Clear" class="button" onclick="" />
-  </div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <div class="file-field">
+            <div class="d-flex justify-content-center">
+                <div class="btn btn-mdb-color btn-sucess input-group-append">
+                    <!--<span>Choose file</span>-->
+                    <input type="file" class="btn btn-dark" name="file" id="imageUpload" accept=".png, .jpg, .jpeg"></input>
+                </div>
+            </div>
+        </div>
+    </form>
 
-  <div id="image-box">
-    <img id="image-display" />
-    <div id="pred-result" class="hidden"></div>
-    <svg id="loader" class="hidden" viewBox="0 0 32 32" width="32" height="32">
-      <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
-    </svg>
-  </div>
-</div>
 
+    <div class="image-section" style="display:none;">
+         <img id="imagePreview"  class="img-responsive" src="#" style="width:300px;height:300px;"/><br><br>
+         <div>
+            <button type="button" class="btn btn-dark btn-lg " id="btn-predict">Predict!</button>
+         </div>
+    </div>
+
+
+
+    <div class="loader" style="display:none;"></div>
+
+    <h3 id="result">
+        <span> </span>
+
+    </h3>
+    <br>
+<div position = "absolute" bottom = "0" width= "100%" height= "0px">
+        <p>Made by : Krishna patel</p>
+        <i class="fa fa-github" style="font-size:36px" ></i><pfont-size= "14px">kri25shna99</p>
+    </div>
+</center><br><br>
 {% endblock %}
