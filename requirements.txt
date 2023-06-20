@@ -1,6 +1,4 @@
 h5py
-Jinja2
-Pillow
 Werkzeug
 WSGIserver
 Flask
